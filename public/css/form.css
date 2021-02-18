@@ -12,6 +12,7 @@ body{
     background-size: cover !important;
     background-position: center;
     text-align: center;
+    filter: grayscale(100%);
  }
 
 #back{
