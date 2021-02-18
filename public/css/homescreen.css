@@ -1,24 +1,26 @@
-body{
-    background-image: url(../images/begin.jpg);
-    background-repeat: no-repeat;
-    background-size: cover !important;
-    background-attachment: fixed;
-    background-position: center;
-    text-align: center;
-   font-size: 150%;
-   text-indent: 10%;
-   width:600px;
-   margin-top :50px;
-   margin: auto;
-   position: absolute;
-   left: 50%;
-   top: 30%;
-   transform: translate(-50%,-30%);
-   filter: grayscale(100%);
+/*Begin page css style */
 
- }
-button{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+body {
+  /* background-image: url(../images/begin.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  font-size: 150%;
+  text-indent: 10%;
+  width: 600px;
+  margin-top: 50px;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  filter: grayscale(100%);
+}
+
+button {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 8px;
   font-size: 16px;
   background-color: #EAC7C7;
