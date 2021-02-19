@@ -6,16 +6,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link href="css/form.css" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+	</style>
 </head>
 
 <body>
 	<main>
 		{{!-- another method: onclick="history.back()" --}}
-		<button id="back" onclick="location.href='./'"></button>
+		<div class="header">
+			<button id="back" onclick="location.href='./'" ></button>
+			<div>Product Description Form</div>
+		</div>
 		{{!-- <img id="back" src="../images/left-arrow.svg" alt="back arrow"> --}}
 		<form>
 			<!--Product Information-->
-			<h1>Product Info</h1><br />
+			<br />
+			<div class="divider">
+				<div class="line"></div>
+				<b>Product Info</b>
+				<div class="line"></div>
+			</div>
+			<br />
 			<label for="name">product name:&nbsp;</label>
 			<input class="input" type="text" id="name" name="name" placeholder="Name"><br /><br />
 			<label for="price">price:&nbsp;</label>
@@ -29,7 +41,7 @@
 				<option value="fair"></option>
 				<option value="poor"></option>
 			</datalist> <br /><br />
-			<hr /><br />
+			<hr></hr><br />
 			<label for="name">dimension:&nbsp;</label>
 			<input class="input" list="dimensions" id="dimension" name="dimension" placeholder="inch">
 			<datalist id="dimensions">
@@ -43,15 +55,27 @@
 			<input class="input" type="text" id="width" name="width" placeholder="eg. 40"><br /><br />
 			<label for="length">height:&nbsp;</label>
 			<input class="input" type="text" id="height" name="height" placeholder="eg. 30"><br /><br />
-			<input class="pictures" id="picture" type="submit" value="Upload Picture"><br /><br />
+			<input class="pictures" id="picture" type="submit" value="Upload Picture">
 			<input class="pictures" id="diagram" type="submit" value="Create 2D Diagram"><br /><br />
 
-			<p>Description:</p>
-			<textarea rows="10" cols="50">you can leave additional comments if you want.</textarea>
+			<br />
+			<div class="divider">
+				<div class="line"></div>
+				<b>Description</b>
+				<div class="line"></div>
+			</div>
+			<br />
+			<textarea rows="10">Please add additional informaiton if needed.</textarea>
 			<br /><br />
 
 			<!--Contact Information-->
-			<h1>Contact Info</h1>
+			<br />
+			<div class="divider">
+				<div class="line"></div>
+				<b>Contact Info</b>
+				<div class="line"></div>
+			</div>
+			<br />
 			<input list="contacts" class="contact" name="contact" value="phone">
 			<datalist id="contacts">
 				<option value="phone"></option>
@@ -59,17 +83,11 @@
 			</datalist><b>:&nbsp;</b>
 			<input type="text" class="contact">
 		
-
-			<div class="btn">
-				<div><input class="bottom_btn" id="save" type="submit" value="Save for later"></div>
-				<div><input class="bottom_btn" id="preview" type="submit" value="Preview"></div>
+			<div class="btn-container">
+				<div><input class="btn bottom_btn" id="save" type="submit" value="Save for later"></div>
+				<div><input class="btn bottom_btn" id="preview" type="submit" value="Preview"></div>
 			</div>
-
-
-
 		</form>
-
 	</main>
 </body>
-
 </html>
