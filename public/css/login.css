@@ -1,0 +1,41 @@
+.logpc{
+  display: block;
+  max-width: 40%;
+  object-fit: contain;
+  margin: 15px auto;
+}
+.container{
+  padding: 15px;
+}
+.container2{
+  padding: 15px;
+  background-color:#F3F3F3
+}
+.psw{
+  float:right;
+}
+.checkb{
+  float:left;
+}
+form{
+  width:40%;
+  margin: 5% auto;
+  border: 1px solid gray;
+}
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 13px 15px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+button{
+  display: block;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #CECAC9;
+  width:40%;
+  margin: 10% auto;
+}
