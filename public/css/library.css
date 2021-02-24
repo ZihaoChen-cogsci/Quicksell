@@ -20,6 +20,8 @@
     /* float: left; */
     /* padding-left: 40px; */
 }
+.mySlides {display: none}
+img {vertical-align: middle;}
 .next{
   right: 0;
 }
@@ -32,4 +34,19 @@
   transition: 0.6s ease;
   user-select: none;
   margin: auto 10%;
+}
+.tempic{
+  display: block;
+  max-width: 40%;
+  object-fit: contain;
+  margin: 15px auto;
+}
+.set {
+  animation-name: set;
+  animation-duration: 1s;
+}
+
+@keyframes set {
+  from {opacity: .3}
+  to {opacity: 1}
 }
