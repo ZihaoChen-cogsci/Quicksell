@@ -12,7 +12,8 @@ var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var form = require('./routes/form');
-
+var login = require('./routes/login');
+var library = require('./routes/library');
 var app = express();
 
 // all environments
@@ -35,8 +36,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/index', index.view);
 app.get('/form', form.view);
+app.get('/library',library.view);
 // Example route
 // app.get('/users', user.list);
 
