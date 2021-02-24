@@ -4,17 +4,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quicksell_library</title>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/library.js"></script>
 	<link href="css/library.css" rel="stylesheet">
+  <script src="js/bootstrap.js"></script>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
 </head>
 <body>
   <div class="header">
     <button id="back" onclick="location.href='./index'" ></button>
     <div>Template Select Page</div>
   </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  <div>
-  </div>
-
+    <a class="prev" onclick="addnum(-1)">&#10094;</a>
+    <a class="next" onclick="addnum(1)">&#10095;</a>
+  {{#each templates}}
+    <div class="tempic set">
+    	<img src="images/{{image}}" class="img">
+      <div class="text">{{name}}</div>
+    </div>
+    {{/each}}
+<script>
+		var picnum = 1;
+		picshw(picnum);
+</script>
 </body>
 </html>
