@@ -8,22 +8,13 @@ body{
     /* background-color: #161415; */
     background-image: url(../images/form-bg.png);
     background-repeat: no-repeat;
-    /*cover is good. Will show the pictures in propotional, so will lose the bottom a little bit!*/
     background-size: cover !important;
     background-position: center;
     text-align: center;
-    /* filter: grayscale(100%); */
     margin: 0;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
 }
-/* 
-form {
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .divider {
     display: grid;
@@ -75,12 +66,9 @@ form {
     width: 100%;
     z-index: 1;
     display: flex;
-    /* display: grid;
-    grid-template-columns: 100px 1fr 100px; */
     justify-content: center;
     align-items: center;
     background-color: white;
-    /* border-bottom: 1px solid rgba(0, 0, 0, .2); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     height: 57px;
     font-size: 16px;
@@ -117,19 +105,8 @@ p {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-    /* color: rgb(187, 143, 31); */
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     font-weight: bold;
 }
-
-/* .btn {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #EAC7C7;
-    width: 50%;
-    height: 65px;
-} */
 
 .btn-container {
     display: flex;
@@ -144,22 +121,11 @@ p {
     margin: 50px 0 !important;
 }
 
-/* .bottom_btn {
-    display: block;
-    width: 150px;
-    height: 40px;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 100px;
-    margin-top: 70px;
-} */
-
 .pictures {
     width: 250px;
     height: 40px;
     text-align: center;
     font-size: 20px;
-    /* font-family:Arial, Helvetica, sans-serif; */
     margin-top: 30px;
 }
 

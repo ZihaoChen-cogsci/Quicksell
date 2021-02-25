@@ -14,8 +14,9 @@ var index = require('./routes/index');
 var form = require('./routes/form');
 var preview = require('./routes/preview');
 
+var login = require('./routes/login');
+var library = require('./routes/library');
 var app = express();
-
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -36,9 +37,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/index', index.view);
 app.get('/form', form.view);
 app.get('/preview', preview.view);
+app.get('/library',library.view);
+app.get('/form2', form.view2);
+app.get('/form3', form.view3);
 // Example route
 // app.get('/users', user.list);
 
