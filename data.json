@@ -4,13 +4,19 @@
  "url": "dfdfsf",
  "image": "chairform.png",
  "name": "Template 1",
- "selected": "false"
+ "selected": false
 },
 {
 "url": "dfdfsf",
 "image": "chairform2.png",
 "name": "Template 2",
-"selected": "false"
+"selected": false
+},
+{
+"url": "dfdfsf",
+"image": "chairform3.png",
+"name": "Template 3",
+"selected": false
 }
 ]
 }
