@@ -39,6 +39,8 @@ app.get('/', login.view);
 app.get('/index', index.view);
 app.get('/form', form.view);
 app.get('/library',library.view);
+app.get('/form2', form.view2);
+app.get('/form3', form.view3);
 // Example route
 // app.get('/users', user.list);
 
