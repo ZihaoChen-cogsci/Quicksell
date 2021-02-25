@@ -12,6 +12,7 @@ var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var form = require('./routes/form');
+var preview = require('./routes/preview');
 
 var app = express();
 
@@ -37,6 +38,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', index.view);
 app.get('/form', form.view);
+app.get('/preview', preview.view);
 // Example route
 // app.get('/users', user.list);
 

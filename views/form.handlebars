@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/form.js"></script>
 	<link href="css/form.css" rel="stylesheet">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
@@ -15,10 +17,12 @@
 	<main>
 		{{!-- another method: onclick="history.back()" --}}
 		<div class="header">
-			<button id="back" onclick="location.href='./'" ></button>
-			<div>Product Description Form</div>
+			<div class="header-content header-left" style="font-size: 13px;">
+				<button class="back-button" onclick="location.href='./'" ></button>
+				Cancel
+			</div>
+			<div><b>New Product Form</b></div>
 		</div>
-		{{!-- <img id="back" src="../images/left-arrow.svg" alt="back arrow"> --}}
 		<form>
 			<!--Product Information-->
 			<br />
@@ -27,46 +31,60 @@
 				<b>Product Info</b>
 				<div class="line"></div>
 			</div>
-			<br />
-			<label for="name">product name:&nbsp;</label>
-			<input class="input" type="text" id="name" name="name" placeholder="Name"><br /><br />
-			<label for="price">price:&nbsp;</label>
-			<input class="input" type="text" id="price" name="price" placeholder="eg. $20"><br /><br />
-			<label for="condition">condition:&nbsp;</label>
-			<input class="input" list="conditions" id="condition" name="condition" value="new">
-			<datalist id="conditions">
-				<option value="new"></option>
-				<option value="like new"></option>
-				<option value="good"></option>
-				<option value="fair"></option>
-				<option value="poor"></option>
-			</datalist> <br /><br />
-			<hr></hr><br />
-			<label for="name">dimension:&nbsp;</label>
-			<input class="input" list="dimensions" id="dimension" name="dimension" placeholder="inch">
-			<datalist id="dimensions">
-				<option value="inch"></option>
-				<option value="cm"></option>
-				<option value="m"></option>
-			</datalist> <br /><br />
-			<label for="length">length:&nbsp;</label>
-			<input class="input" type="text" id="length" name="length" placeholder="eg. 20"><br /><br />
-			<label for="length">width:&nbsp;</label>
-			<input class="input" type="text" id="width" name="width" placeholder="eg. 40"><br /><br />
-			<label for="length">height:&nbsp;</label>
-			<input class="input" type="text" id="height" name="height" placeholder="eg. 30"><br /><br />
-			<input class="pictures" id="picture" type="submit" value="Upload Picture">
-			<input class="pictures" id="diagram" type="submit" value="Create 2D Diagram"><br /><br />
-
-			<br />
-			<div class="divider">
-				<div class="line"></div>
-				<b>Description</b>
-				<div class="line"></div>
+			<div class="input-field">
+				<label for="name" class="input-label">Product Name</label>
+				<input class="input" type="text" id="name" name="name"></input>
 			</div>
-			<br />
-			<textarea rows="10">Please add additional informaiton if needed.</textarea>
-			<br /><br />
+			<div class="input-field">
+				<label for="price" class="input-label">Price</label>
+				<input class="input" type="text" id="price" name="price" placeholder="eg. $20"></input>
+			</div>
+			<div class="input-field">
+				<label for="condition" class="input-label">Condition</label>
+				<select class="input" id="condition" name="condition" value="new">
+					<option value="new">New</option>
+					<option value="like new">Like New</option>
+					<option value="good">Good</option>
+					<option value="fair">Fair</option>
+					<option value="poor">Poor</option>
+				</select>
+			</div>
+
+			<div class="dashed-divider"></div>
+	
+			<!--dimensions-->
+			<div class="input-field">
+				<label for="dimension" class="input-label">Dimension</label>
+				<select id="dimension" class="input" id="dimension" name="dimension" value="CM">
+					<option value="cm">centimenter (CM)</option>
+					<option value="m">meter (M)</option>
+					<option value="inch">inch (IN)</option>
+					<option value="foot">foot (FT)</option>
+				</select>
+			</div>
+			<div class="input-field">
+				<label for="length" class="input-label">Length</label>
+				<input class="input" type="text" id="length" name="length" placeholder="eg. 20"></input>
+			</div>
+			<div class="input-field">
+				<label for="width" class="input-label">Width</label>
+				<input class="input" type="text" id="width" name="width" placeholder="eg. 40"></input>
+			</div>
+			<div class="input-field">
+				<label for="height" class="input-label">Height</label>
+				<input class="input" type="text" id="height" name="height" placeholder="eg. 30"></input>
+			</div>
+
+			<!-- buttons -->
+			<input class="button" id="picture" type="submit" value="Upload Picture"></input>
+			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
+			<input class="button" id="diagram" type="submit" value="Create 2D Diagram"></input>
+			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the dimensions.</div>
+
+			<div class="dashed-divider"></div>
+			
+			<!-- description -->
+			<textarea rows="8" class="input-field" placeholder="Please enter additional information if needed."></textarea>
 
 			<!--Contact Information-->
 			<br />
@@ -75,17 +93,26 @@
 				<b>Contact Info</b>
 				<div class="line"></div>
 			</div>
-			<br />
-			<input list="contacts" class="contact" name="contact" value="phone">
-			<datalist id="contacts">
-				<option value="phone"></option>
-				<option value="email"></option>
-			</datalist><b>:&nbsp;</b>
-			<input type="text" class="contact">
+
+			<div class="contact-container">
+				<div class="input-field" style="width: 39%;">
+					<label for="contact-methods" class="input-label" style="font-size: 12px;">Contact Method</label>
+					<select class="input" id="contact-methods" name="contact-methods" value="phone" style="font-size: 14px;">
+						<option value="phone">Cell Phone</option>
+						<option value="email">Email</option>
+						<option value="weechat">WeeChat</option>
+						<option value="facebook">Facebook</option>
+					</select>
+				</div>
+				<div class="input-field" style="width: 60%;">
+					{{!-- <label for="contact" class="input-label"></label> --}}
+					<input class="input" type="text" id="contact" name="contact" placeholder="eg. (555) 555-5555"></input>
+				</div>
+			</div>
 		
 			<div class="btn-container">
-				<div><input class="btn bottom_btn" id="save" type="submit" value="Save for later"></div>
-				<div><input class="btn bottom_btn" id="preview" type="submit" value="Preview"></div>
+				<input class="button short-button" id="save" type="submit" value="Save for later">
+				<input class="button short-button" id="preview" type="submit" value="Preview">
 			</div>
 		</form>
 	</main>
