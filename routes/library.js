@@ -1,6 +1,7 @@
+var i;
 var data = require('../data.json');
 exports.view = function(req, res){
-    for (var i = 0; i < data.length; i++) {
+    for (i = 0; i < 3; i++) {
     data.templates[i].selected=false;
   }
     console.log(data);
