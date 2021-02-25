@@ -2,16 +2,18 @@
  * GET form page.
  */
 var data = require('../data.json');
-/*var pic = driver.findElements(By.className('tempic'));*/
-/*exports.view = function(req, res){
-    for (var i = 0; i < data.length; i++) {
-      if (pic[i].style.display=='block') {
-        data.templates[i].selected=true;
-      }
-      console.log(data);
-      res.render('form',data);
-    } */
-    exports.view = function(req, res){
+  exports.view = function(req, res){
+    data.templates[0].selected=true;
     console.log(data);
     res.render('form',data);
   };
+  exports.view2 = function(req, res){
+    data.templates[1].selected=true;
+    console.log(data);
+    res.render('form',data);
+};
+  exports.view3 = function(req, res){
+    data.templates[2].selected=true;
+    console.log(data);
+    res.render('form',data);
+};
