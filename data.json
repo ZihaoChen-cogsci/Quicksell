@@ -1,21 +1,21 @@
 {
 "templates": [
 {
- "url": "dfdfsf",
+ "url": "/form",
  "image": "chairform.png",
  "name": "Template 1",
  "id":"",
  "selected": false
 },
 {
-"url": "dfdfsf",
+"url": "/form1",
 "image": "chairform2.png",
 "name": "Template 2",
 "id":2,
 "selected": false
 },
 {
-"url": "dfdfsf",
+"url": "/form2",
 "image": "chairform3.png",
 "name": "Template 3",
 "id":3,
