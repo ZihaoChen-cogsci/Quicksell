@@ -6,7 +6,7 @@ input::-webkit-calendar-picker-indicator {
 
 body{
     /* background-color: #161415; */
-    background-image: url(../images/form.jpg);
+    background-image: url(../images/form-bg.png);
     background-repeat: no-repeat;
     /*cover is good. Will show the pictures in propotional, so will lose the bottom a little bit!*/
     background-size: cover !important;

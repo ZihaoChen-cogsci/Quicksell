@@ -1,7 +1,7 @@
 /*Begin page css style */
 
 body {
-  /* background-image: url(../images/begin.jpg); */
+  background-image: url(../images/begin.jpg);
   background-repeat: no-repeat;
   background-size: cover !important;
   background-attachment: fixed;
@@ -15,7 +15,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  filter: grayscale(100%);
 }
 
 button {

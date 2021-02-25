@@ -35,3 +35,4 @@ function imagesPreview(input, placeToInsertImagePreview) {
 
     }
 };
+

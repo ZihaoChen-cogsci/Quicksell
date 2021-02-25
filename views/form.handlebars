@@ -43,11 +43,12 @@
 			</div>
 			<div class="input-field">
 				<label for="name" class="input-label">Product Name</label>
-				<input class="input" type="text" id="name" name="name">
+				<input class="input" type="text" id="name" name="name" value="Mike">
 			</div>
 			<div class="input-field">
 				<label for="price" class="input-label">Price</label>
-				<input class="input" type="text" id="price" name="price" placeholder="eg. $20">
+				<!--placeholder="eg. $20"-->
+				<input class="input" type="text" id="price" name="price" value="$20">
 			</div>
 			<div class="input-field">
 				<label for="condition" class="input-label">Condition</label>
@@ -74,15 +75,15 @@
 			</div>
 			<div class="input-field">
 				<label for="length" class="input-label">Length</label>
-				<input class="input" type="text" id="length" name="length" placeholder="eg. 20">
+				<input class="input" type="text" id="length" name="length" value="20">
 			</div>
 			<div class="input-field">
 				<label for="width" class="input-label">Width</label>
-				<input class="input" type="text" id="width" name="width" placeholder="eg. 40">
+				<input class="input" type="text" id="width" name="width" value="40">
 			</div>
 			<div class="input-field">
 				<label for="height" class="input-label">Height</label>
-				<input class="input" type="text" id="height" name="height" placeholder="eg. 30">
+				<input class="input" type="text" id="height" name="height" value="30">
 			</div>
 
 			<!-- buttons -->
@@ -90,7 +91,7 @@
 				style="display:none;">
 			<label for="file" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
-			<input class="button" id="diagram" type="submit" value="Create 2D Diagram">
+			<input class="button" id="diagram" type="submit" value="Create 2D Diagram" onclick="alert('It’s still in the process of making or deleting according to future working hours')">
 			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the
 				dimensions.</div>
 
@@ -123,7 +124,7 @@
 				<div class="input-field" style="width: 60%;">
 					{{!-- <label for="contact" class="input-label"></label> --}}
 					<input class="input" type="text" id="contact" name="contact"
-						placeholder="eg. (555) 555-5555">
+						value ="(555) 555-5555">
 				</div>
 			</div>
 
@@ -135,7 +136,8 @@
 
 		<!-- Bottom Buttons-->
 		<div class="btn-container">
-			<div><button class="button bottom_btn" id="save" type="submit" value="Save for later">Save for later</button>
+			<div><button class="button bottom_btn" id="save" type="submit" value="Save for later"
+			onclick="alert('Save Succesfully')">Save for later</button>
 			</div>
 			<div><button class="button bottom_btn" id="preview" type="submit" value="Preview"
 					onclick="location.href='./template1'">Preview</button></div>
