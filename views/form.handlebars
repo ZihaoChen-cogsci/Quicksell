@@ -5,12 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<script src="js/jquery-1.11.0.js"></script>
-	<script src="js/form.js"></script>
+	{{!-- <script src="js/jquery-1.11.0.js"></script>
+	<script src="js/form.js"></script> --}}
 	<link href="css/form.css" rel="stylesheet">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--js: load the uploaded pictures-->
+	<script>
+		//var loadFile = function (event) {
+		//	var image = document.getElementById('output');
+		//	image.src = URL.createObjectURL(event.target.files[0]);
+		//};
+	</script>
+	<script src="js/uploadPictures.js">
+	</script>
 </head>
 
 <body>
@@ -18,7 +28,7 @@
 		{{!-- another method: onclick="history.back()" --}}
 		<div class="header">
 			<div class="header-content header-left" style="font-size: 13px;" onclick="location.href='./library'">
-				<button class="back-button" ></button>
+				<button class="back-button"></button>
 				Cancel
 			</div>
 			<div><b>New Product Form</b></div>
@@ -33,11 +43,11 @@
 			</div>
 			<div class="input-field">
 				<label for="name" class="input-label">Product Name</label>
-				<input class="input" type="text" id="name" name="name"></input>
+				<input class="input" type="text" id="name" name="name">
 			</div>
 			<div class="input-field">
 				<label for="price" class="input-label">Price</label>
-				<input class="input" type="text" id="price" name="price" placeholder="eg. $20"></input>
+				<input class="input" type="text" id="price" name="price" placeholder="eg. $20">
 			</div>
 			<div class="input-field">
 				<label for="condition" class="input-label">Condition</label>
@@ -51,7 +61,7 @@
 			</div>
 
 			<div class="dashed-divider"></div>
-	
+
 			<!--dimensions-->
 			<div class="input-field">
 				<label for="dimension" class="input-label">Dimension</label>
@@ -64,27 +74,32 @@
 			</div>
 			<div class="input-field">
 				<label for="length" class="input-label">Length</label>
-				<input class="input" type="text" id="length" name="length" placeholder="eg. 20"></input>
+				<input class="input" type="text" id="length" name="length" placeholder="eg. 20">
 			</div>
 			<div class="input-field">
 				<label for="width" class="input-label">Width</label>
-				<input class="input" type="text" id="width" name="width" placeholder="eg. 40"></input>
+				<input class="input" type="text" id="width" name="width" placeholder="eg. 40">
 			</div>
 			<div class="input-field">
 				<label for="height" class="input-label">Height</label>
-				<input class="input" type="text" id="height" name="height" placeholder="eg. 30"></input>
+				<input class="input" type="text" id="height" name="height" placeholder="eg. 30">
 			</div>
 
 			<!-- buttons -->
-			<input class="button" id="picture" type="submit" value="Upload Picture"></input>
+			<input id="file" multiple name="image" type="file" accept="image/gif, image/jpeg, image/png, image/jpg"
+				style="display:none;">
+			<label for="file" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
-			<input class="button" id="diagram" type="submit" value="Create 2D Diagram"></input>
-			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the dimensions.</div>
+			<input class="button" id="diagram" type="submit" value="Create 2D Diagram">
+			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the
+				dimensions.</div>
 
+			<div class="gallery"></div>
 			<div class="dashed-divider"></div>
-			
+
 			<!-- description -->
-			<textarea rows="8" class="input-field" placeholder="Please enter additional information if needed."></textarea>
+			<textarea rows="8" class="input-field"
+				placeholder="Please enter additional information if needed."></textarea>
 
 			<!--Contact Information-->
 			<br />
@@ -97,24 +112,35 @@
 			<div class="contact-container">
 				<div class="input-field" style="width: 39%;">
 					<label for="contact-methods" class="input-label" style="font-size: 12px;">Contact Method</label>
-					<select class="input" id="contact-methods" name="contact-methods" value="phone" style="font-size: 14px;">
+					<select class="input" id="contact-methods" name="contact-methods" value="phone"
+						style="font-size: 14px;">
 						<option value="phone">Cell Phone</option>
 						<option value="email">Email</option>
-						<option value="weechat">WeeChat</option>
+						<option value="wechat">WeChat</option>
 						<option value="facebook">Facebook</option>
 					</select>
 				</div>
 				<div class="input-field" style="width: 60%;">
 					{{!-- <label for="contact" class="input-label"></label> --}}
-					<input class="input" type="text" id="contact" name="contact" placeholder="eg. (555) 555-5555"></input>
+					<input class="input" type="text" id="contact" name="contact"
+						placeholder="eg. (555) 555-5555">
 				</div>
 			</div>
-		
-			<div class="btn-container">
+
+			{{!-- <div class="btn-container">
 				<input class="button short-button" id="save" type="submit" value="Save for later">
 				<input class="button short-button" id="preview" type="submit" value="Preview">
-			</div>
+			</div> --}}
 		</form>
+
+		<!-- Bottom Buttons-->
+		<div class="btn-container">
+			<div><button class="button bottom_btn" id="save" type="submit" value="Save for later">Save for later</button>
+			</div>
+			<div><button class="button bottom_btn" id="preview" type="submit" value="Preview"
+					onclick="location.href='./template1'">Preview</button></div>
+		</div>
 	</main>
 </body>
+
 </html>
