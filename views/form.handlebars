@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	{{!-- <script src="js/jquery-1.11.0.js"></script>
+	{{!--
+	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/form.js"></script> --}}
 	<link href="css/form.css" rel="stylesheet">
 	<style>
@@ -91,9 +92,12 @@
 				style="display:none;">
 			<label for="file" class="button" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
-			<input class="button" id="diagram" type="submit" value="Create 2D Diagram" onclick="alert('It’s still in the process of making or deleting according to future working hours')">
+			
+			<!--Comment Now!Not Finished Function button-->
+			{{!-- <input class="button" id="diagram" type="submit" value="Create 2D Diagram"
+				onclick="alert('It’s still in the process of making or deleting according to future working hours')">
 			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the
-				dimensions.</div>
+				dimensions.</div> --}}
 
 			<div class="gallery"></div>
 			<div class="dashed-divider"></div>
@@ -123,8 +127,7 @@
 				</div>
 				<div class="input-field" style="width: 60%;">
 					{{!-- <label for="contact" class="input-label"></label> --}}
-					<input class="input" type="text" id="contact" name="contact"
-						value ="(555) 555-5555">
+					<input class="input" type="text" id="contact" name="contact" value="(555) 555-5555">
 				</div>
 			</div>
 
@@ -136,11 +139,14 @@
 
 		<!-- Bottom Buttons-->
 		<div class="btn-container">
-			<div><button class="button bottom_btn" id="save" type="submit" value="Save for later"
-			onclick="alert('Saved Successfully')">Save for later</button>
+			<div>
+				<button class="button bottom_btn" id="save" type="submit" value="Save for later"
+					onclick="alert('Saved Successfully')">Save for later</button>
 			</div>
+
 			<div><button class="button bottom_btn" id="preview" type="submit" value="Preview"
-					onclick="location.href='./template1'">Preview</button></div>
+					onclick="location.href='./preview'">Preview</button></div>
+
 		</div>
 	</main>
 </body>

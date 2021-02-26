@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Quicksell</title>
-	<link href="css/preview.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quicksell</title>
+  <link href="css/preview.css" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -14,10 +15,20 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/0b253fb25d.js" crossorigin="anonymous"></script>
+
+
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/library.js"></script>
+
+  <script src="js/bootstrap.js"></script>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+
 </head>
+
 <body>
   <div class="header">
-    <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='./index'">
+    <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='./form'">
       <button class="back-button"></button>
       Back to edit
     </div>
@@ -27,9 +38,52 @@
       <button class="back-button" style="transform: rotate(180deg);"></button>
     </div>
   </div>
-  
-  <div class="preview-content">
-    <div class="test-content"></div>
-  </div>
+
+  <main class="preview-content">
+    <div class="test-content">
+
+      <!--Funiture pictures-->
+      <div>
+        <a class="prev" onclick="addnum(-1)">&#10094;</a>
+        <a class="next" onclick="addnum(1)">&#10095;</a>
+        <br />
+
+        {{#each templates}}
+        <div class="tempic set">
+          <img src="images/{{image}}" class="img">
+        </div>
+        {{/each}}
+      </div>
+
+      <!--Funiture Information-->
+      <div class="preview-content">
+        <h1>Leather High-Back Chair</h1>
+        <h2>$109.9</h2>
+        
+        <ul>
+          <li>Length: &nbsp;&nbsp;22in</li>
+          <li>Width: &nbsp;&nbsp;31in</li>
+          <li>Height: &nbsp;&nbsp;46in</li>
+        </ul>
+        <p  class="info" style="padding-top: 40px;">Condition: &nbsp;&nbsp;Good</p>
+        <p class="info" id="description">Weight capacity tested to support 275 lbs. Meets and/or exceeds ANSI/BIFMA performance standards. Only used
+          for a month, almost no wear</p>
+      </div>
+
+      <!--Contact Information-->
+      <div class="contact">
+        <h3>Contact</h3>
+        <p class="info">xding@ucsd.edu</p>
+        <h3>for more information</h3>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    var picnum = 1;
+    picshw(picnum);
+  </script>
 </body>
+
 </html>
