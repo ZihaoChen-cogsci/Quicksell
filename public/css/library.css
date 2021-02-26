@@ -31,17 +31,12 @@
   font-size: 24px;
   transition: 0.6s ease;
   user-select: none;
-<<<<<<< HEAD
-  /* margin: auto 12%; */
-=======
-  margin: auto 5%;
->>>>>>> 33fc8dbbf549e62394bcddaa7227121dfbe23927
 }
 .tempic{
   display: block;
   width: 100%;
-  height:10%;
-  object-fit: contain;
+  /* height:10%; */
+  /* object-fit: contain; */
   margin: 0px auto;
 }
 .img{
@@ -53,7 +48,6 @@
   margin-right: auto;
 }
 .button {
-  cursor: pointer;
   background-color: #EBDCD1;
   border: none;
   outline: none;
@@ -64,9 +58,7 @@
   height: 45px;
   width: 80%;
   font-weight: normal;
-  position: absolute;
-  left: 10%;
-  bottom: 30px;
+  margin: 10%;
 }
 /* .btnc{
   display: block;
