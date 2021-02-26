@@ -17,6 +17,7 @@ var preview = require('./routes/preview');
 var login = require('./routes/login');
 var library = require('./routes/library');
 var share = require('./routes/share');
+var sharable = require('./routes/sharable');
 var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -46,6 +47,7 @@ app.get('/library',library.view);
 app.get('/form2', form.view2);
 app.get('/form3', form.view3);
 app.get('/share', share.view);
+app.get('/sharable', sharable.view);
 // Example route
 // app.get('/users', user.list);
 

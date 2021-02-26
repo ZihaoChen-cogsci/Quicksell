@@ -7,9 +7,5 @@ exports.view = function(req, res){
     data.templates[i].selected=false;
   }
 
-  res.render('preview', data);
+  res.render('sharable', data);
 };
-
-// function handleModal() {
-
-// }
