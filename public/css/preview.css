@@ -35,3 +35,63 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  height: 57px;
+  font-size: 16px;
+}
+
+.header-content {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: rgb(48, 48, 48);
+}
+
+.header-left {
+  left: 10px;
+  justify-content: flex-start;
+}
+
+.header-right {
+  right: 10px;
+  justify-content: flex-end;
+}
+
+.back-button {
+  background-image: url(../images/back-arrow.svg);
+  background-size: 100%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+}
+
+.preview-content {
+  width: 100%;
+  height: fit-content;
+  padding: 14px;
+  background-color: #F1F1F1;
+}
+
+.test-content {
+  width: 100%;
+  background-color: gray;
+  height: 1000px;
+}
