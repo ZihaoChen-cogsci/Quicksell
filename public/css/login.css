@@ -13,15 +13,20 @@
 }
 .psw{
   float:right;
+  font-size: 12px;
+  padding-top: 26px;
 }
 .checkb{
   float:left;
+  font-size: 12px;
+  padding-top: 21px;
 }
 form{
-  width:40%;
-  margin: 5% auto;
+  width:65%;
+  margin:30% auto;
   border: 1px solid gray;
 }
+
 input[type=text], input[type=password]{
   width: 100%;
   padding: 13px 15px;
@@ -32,10 +37,10 @@ input[type=text], input[type=password]{
 }
 button{
   display: block;
-  padding: 12px 18px;
-  font-size: 18px;
+  padding: 2px 2px;
+  font-size: 15px;
   font-weight: bold;
   background-color: #CECAC9;
   width:40%;
-  margin: 10% auto;
+  margin: 20% auto 15%;
 }
