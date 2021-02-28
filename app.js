@@ -41,11 +41,11 @@ if ('development' == app.get('env')) {
 
 app.get('/', login.view);
 app.get('/index', index.view);
-app.get('/form', form.view);
+app.get('/form/:id', form.view);
 app.get('/preview', preview.view);
 app.get('/library',library.view);
-app.get('/form2', form.view2);
-app.get('/form3', form.view3);
+// app.get('/form2', form.view2);
+// app.get('/form3', form.view3);
 app.get('/share', share.view);
 app.get('/sharable', sharable.view);
 // Example route

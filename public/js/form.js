@@ -6,7 +6,6 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	console.log("Javascript connected!");
 	// $("h3 a").click(function(e) {
 	// 	e.preventDefault();
 	// 	const originalText = $(this).text();

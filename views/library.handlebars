@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="header">
-    <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='./index'">
+    <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='/index'">
       <button class="back-button"></button>
       Back
     </div>
@@ -30,7 +30,9 @@
     <div class="tempic set">
       <img src="images/{{image}}" class="img">
       <div class="text">{{name}}</div>
-			<button class="button" onclick="location.href='./form'+'{{id}}'">Select</button>
+      <button class="button" onclick="location.href='/form/{{id}}'">Select</button>
+
+			{{!-- <button class="button" onclick="location.href='/form/{{id}}'">Select</button> --}}
     </div>
   {{/each}}
 <script>

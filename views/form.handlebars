@@ -5,22 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	{{!--
-	<script src="js/jquery-1.11.0.js"></script>
-	<script src="js/form.js"></script> --}}
-	<link href="css/form.css" rel="stylesheet">
+	<link href="/css/form.css" rel="stylesheet">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="/js/form.js"></script>
 	<!--js: load the uploaded pictures-->
-	<script>
-		//var loadFile = function (event) {
-		//	var image = document.getElementById('output');
-		//	image.src = URL.createObjectURL(event.target.files[0]);
-		//};
-	</script>
-	<script src="js/uploadPictures.js">
+	<script src="/js/uploadPictures.js">
 	</script>
 </head>
 
@@ -28,7 +21,7 @@
 	<main>
 		{{!-- another method: onclick="history.back()" --}}
 		<div class="header">
-			<div class="header-content header-left" style="font-size: 13px;" onclick="location.href='./library'">
+			<div class="header-content header-left" style="font-size: 13px;" onclick="location.href='/library'">
 				<button class="back-button"></button>
 				Cancel
 			</div>
@@ -134,7 +127,7 @@
 				<button class="button bottom_btn" id="save" type="submit" value="Save for later"
 					onclick="alert('Saved Successfully')">Save for later</button>
 				<button class="button bottom_btn" id="preview" type="submit" value="Preview"
-					onclick="location.href='./preview'">Preview</button>
+					onclick="location.href='/preview'">Preview</button>
 		</div>
 	</main>
 </body>

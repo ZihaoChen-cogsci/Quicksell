@@ -1,9 +1,10 @@
 var i;
-var data = require('../data.json');
+var template_data = require('../template_data.json');
 exports.view = function(req, res){
-    for (i = 0; i < 3; i++) {
-    data.templates[i].selected=false;
+  console.log('template', template_data);
+
+  for (i = 0; i < 3; i++) {
+    template_data.templates[i].selected=false;
   }
-    console.log(data);
-    res.render('library',data);
+    res.render('library', template_data);
   };
