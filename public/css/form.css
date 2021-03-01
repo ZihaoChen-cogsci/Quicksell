@@ -202,13 +202,11 @@ textarea::placeholder {
 }
 
 .contact-container {
-    width: 80%;
+    width: 82%;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
-
-
 
 p {
     font-weight: bold;
@@ -261,4 +259,23 @@ textarea {
     box-sizing: border-box;
 }
 
+#add-field-button {
+    border: 1px solid #634040;
+    border-radius: 4px;
+    /* background-color: #EBDCD1; */
+    background-color: white;
+    color: #634040;
+
+    /* border: 1px dashed */
+}
+
+.new-field-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-left: 9%;
+    justify-content: space-between;
+}
+
+button:focus {outline:0;}
 

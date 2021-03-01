@@ -27,12 +27,11 @@
 			</div>
 			<div><b>New Product Form</b></div>
 		</div>
-		<form>
-			<!--Product Information-->
+		<form id="form">
 			<br />
 			<div class="divider">
 				<div class="line"></div>
-				<b>Product Info</b>
+				<b>Basic Info</b>
 				<div class="line"></div>
 			</div>
 			<div class="input-field">
@@ -44,19 +43,12 @@
 				<!--placeholder="eg. $20"-->
 				<input class="input" type="text" id="price" name="price" value="$20">
 			</div>
-			<div class="input-field">
-				<label for="condition" class="input-label">Condition</label>
-				<select class="input" id="condition" name="condition" value="new">
-					<option value="new">New</option>
-					<option value="like new">Like New</option>
-					<option value="good">Good</option>
-					<option value="fair">Fair</option>
-					<option value="poor">Poor</option>
-				</select>
+
+			<div class="divider">
+				<div class="line"></div>
+				<b>Dimensions</b>
+				<div class="line"></div>
 			</div>
-
-			<div class="dashed-divider"></div>
-
 			<!--dimensions-->
 			<div class="input-field">
 				<label for="dimension" class="input-label">Dimension</label>
@@ -80,16 +72,36 @@
 				<input class="input" type="text" id="height" name="height" value="30">
 			</div>
 
+			{{!-- <div class="dashed-divider"></div> --}}
+
 			<!-- buttons -->
 			<input id="file" multiple name="image" type="file" accept="image/gif, image/jpeg, image/png, image/jpg"
 				style="display:none;">
 			<label for="file" class="button" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
-			{{!-- <input class="button" id="diagram" type="submit" value="Create 2D Diagram" onclick="alert('It’s still in the process of making or deleting according to future working hours')">
-			<div class="hint">Select a 2D Diagram that best matches your product so we can help you visualize the
-				dimensions.</div> --}}
-
 			<div class="gallery"></div>
+			
+			<!--Product Information-->
+			<div class="divider">
+				<div class="line"></div>
+				<b>Descriptions</b>
+				<div class="line"></div>
+			</div>
+			<div class="input-field">
+				<label for="condition" class="input-label">Condition</label>
+				<select class="input" id="condition" name="condition" value="new">
+					<option value="new">New</option>
+					<option value="like new">Like New</option>
+					<option value="good">Good</option>
+					<option value="fair">Fair</option>
+					<option value="poor">Poor</option>
+				</select>
+			</div>
+
+			<!-- add new fields -->
+			<div id="new-fields"></div>
+			<button id="add-field-button" type="button"> + ADD NEW FIELD</button>
+
 			<div class="dashed-divider"></div>
 
 			<!-- description -->
@@ -105,7 +117,7 @@
 			</div>
 
 			<div class="contact-container">
-				<div class="input-field" style="width: 39%;">
+				<div class="input-field" style="width: 39%; margin: 0;">
 					<label for="contact-methods" class="input-label" style="font-size: 12px;">Contact Method</label>
 					<select class="input" id="contact-methods" name="contact-methods" value="phone"
 						style="font-size: 14px;">
@@ -115,8 +127,7 @@
 						<option value="facebook">Facebook</option>
 					</select>
 				</div>
-				<div class="input-field" style="width: 60%;">
-					{{!-- <label for="contact" class="input-label"></label> --}}
+				<div class="input-field" style="width: 60%; margin: 0;">
 					<input class="input" type="text" id="contact" name="contact" value="(555) 555-5555">
 				</div>
 			</div>
