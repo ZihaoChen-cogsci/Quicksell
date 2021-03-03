@@ -19,6 +19,7 @@
 
 <body>
 	<main>
+		<div>{{formFields[0]}}</div>
 		{{!-- another method: onclick="history.back()" --}}
 		<div class="header">
 			<div class="header-content header-left" style="font-size: 13px;" onclick="location.href='/library'">
@@ -36,12 +37,12 @@
 			</div>
 			<div class="input-field">
 				<label for="name" class="input-label">Product Name</label>
-				<input class="input" type="text" id="name" name="name" value="Mike">
+				<input class="input" type="text" id="name" name="name" value='{{formFields[0]["value"]}}'>
 			</div>
 			<div class="input-field">
 				<label for="price" class="input-label">Price</label>
 				<!--placeholder="eg. $20"-->
-				<input class="input" type="text" id="price" name="price" value="$20">
+				<input class="input" type="text" id="price" name="price" value='{{formFields[1].value}}'>
 			</div>
 
 			<div class="divider">
@@ -52,7 +53,7 @@
 			<!--dimensions-->
 			<div class="input-field">
 				<label for="dimension" class="input-label">Dimension</label>
-				<select id="dimension" class="input" id="dimension" name="dimension" value="CM">
+				<select id="dimension" class="input" id="dimension" name="dimension" value='{{formFields[2].value}}'>
 					<option value="cm">centimenter (CM)</option>
 					<option value="m">meter (M)</option>
 					<option value="inch">inch (IN)</option>
@@ -61,15 +62,15 @@
 			</div>
 			<div class="input-field">
 				<label for="length" class="input-label">Length</label>
-				<input class="input" type="text" id="length" name="length" value="20">
+				<input class="input" type="text" id="length" name="length" value='{{formFields[3].value}}'>
 			</div>
 			<div class="input-field">
 				<label for="width" class="input-label">Width</label>
-				<input class="input" type="text" id="width" name="width" value="40">
+				<input class="input" type="text" id="width" name="width" value='{{formFields[4].value}}'>
 			</div>
 			<div class="input-field">
 				<label for="height" class="input-label">Height</label>
-				<input class="input" type="text" id="height" name="height" value="30">
+				<input class="input" type="text" id="height" name="height" value='{{formFields[5].value}}'>
 			</div>
 
 			{{!-- <div class="dashed-divider"></div> --}}
@@ -89,7 +90,7 @@
 			</div>
 			<div class="input-field">
 				<label for="condition" class="input-label">Condition</label>
-				<select class="input" id="condition" name="condition" value="new">
+				<select class="input" id="condition" name="condition" value='{{formFields[6].value}}'>
 					<option value="new">New</option>
 					<option value="like new">Like New</option>
 					<option value="good">Good</option>
@@ -119,7 +120,7 @@
 			<div class="contact-container">
 				<div class="input-field" style="width: 39%; margin: 0;">
 					<label for="contact-methods" class="input-label" style="font-size: 12px;">Contact Method</label>
-					<select class="input" id="contact-methods" name="contact-methods" value="phone"
+					<select class="input" id="contact-methods" name="contact-methods" value='{{formFields[7].value}}'
 						style="font-size: 14px;">
 						<option value="phone">Cell Phone</option>
 						<option value="email">Email</option>
@@ -128,18 +129,19 @@
 					</select>
 				</div>
 				<div class="input-field" style="width: 60%; margin: 0;">
-					<input class="input" type="text" id="contact" name="contact" value="(555) 555-5555">
+					<input class="input" type="text" id="contact" name="contact" value='{{formFields[8].value}}'>
 				</div>
 			</div>
-		</form>
 
-		<!-- Bottom Buttons-->
-		<div class="btn-container">
-				<button class="button bottom_btn" id="save" type="submit" value="Save for later"
-					onclick="alert('Saved Successfully')">Save for later</button>
-				<button class="button bottom_btn" id="preview" type="submit" value="Preview"
-					onclick="location.href='/preview'">Preview</button>
-		</div>
+					<!-- Bottom Buttons-->
+			<div class="btn-container">
+					<button class="button bottom_btn" id="save" type="submit" value="Save for later"
+						onclick="alert('Saved Successfully')">Save for later</button>
+					<button class="button bottom_btn" id="preview" type="submit" value="Preview"
+										onclick="onPreview('{{templateId}}')">Preview</button>
+						{{!-- onclick="onPreview('{{templateId}}')">Preview</button> --}}
+			</div>
+		</form>
 	</main>
 </body>
 

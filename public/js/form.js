@@ -1,6 +1,7 @@
-'use strict';
+// 'use strict';
 
 let i = 0;
+var formFields = [];
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -8,8 +9,8 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	const formFields = $("#form").serializeArray();
-	console.log("formFields!!!", formFields);
+	formFields = $("#form").serializeArray();
+	console.log('initial form values!!', formFields);
 	$("#add-field-button").click(onAddField);
 }
 
@@ -22,6 +23,8 @@ function onAddField() {
 	i++;
 
 	console.log({fieldName, fieldInput});
+
+	formFields = $("#form").serializeArray();
 }
 
 function deleteField(deleteId) {
@@ -29,4 +32,28 @@ function deleteField(deleteId) {
 	const id = "#new-field" + deleteId;
 	
 	$(id).remove();
+
+	formFields = $("#form").serializeArray();
+}
+
+function onPreview(templateId) {
+	console.log("templateId", templateId);
+
+	$("#form").submit(function(e) {
+		e.preventDefault();
+		console.log("submitting");
+		// var rsvpEmail = $("#rsvpEmail").val();
+		formFields = $("#form").serializeArray();
+		// console.log("rsvpEmail", rsvpEmail);
+		$.post("/updateForm", { formFields: formFields }, postCallback);
+	});
+
+	// formFields = $("#form").serializeArray();
+	console.log("updated form values!!!", formFields);
+	const newPath = "/preview/" + templateId;
+	window.location.href = newPath;
+}
+
+function postCallback(res) {
+	alert("product information received!");
 }

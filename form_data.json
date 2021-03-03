@@ -1,7 +1,13 @@
 {
   "form_items": [
-    {
-      
-    }
+    { "name": "name", "value": "" },
+    { "name": "price", "value": "" },
+    { "name": "dimension", "value": "" },
+    { "name": "length", "value": "" },
+    { "name": "width", "value": "" },
+    { "name": "height", "value": "" },
+    { "name": "condition", "value": "" },
+    { "name": "contact-methods", "value": "" },
+    { "name": "contact", "value": "" }
   ]
 }

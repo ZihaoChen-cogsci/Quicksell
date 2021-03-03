@@ -1,15 +1,9 @@
 
 var i;
 var data = require('../template1.json');
+var form_data = require('../form_data.json');
 exports.view = function(req, res){
-  //handleModal();
-  for (i = 0; i < 3; i++) {
-    data.templates[i].selected=false;
-  }
+  const templateId = req.params.id;
 
-  res.render('preview', data);
+  res.render('preview', { templateId: templateId, templates: data.templates });
 };
-
-// function handleModal() {
-
-// }
