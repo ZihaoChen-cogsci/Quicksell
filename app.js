@@ -41,6 +41,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', login.view);
 app.get('/index', index.view);
+// customize url
 app.get('/form/:id', form.view);
 app.get('/preview/:id', preview.view);
 app.get('/library',library.view);

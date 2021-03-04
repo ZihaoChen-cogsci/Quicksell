@@ -36,20 +36,21 @@ function deleteField(deleteId) {
 	formFields = $("#form").serializeArray();
 }
 
+// when users submit
 function onPreview(templateId) {
 	console.log("templateId", templateId);
 
 	$("#form").submit(function(e) {
 		e.preventDefault();
 		console.log("submitting");
-		// var rsvpEmail = $("#rsvpEmail").val();
+		// get the new form fields
 		formFields = $("#form").serializeArray();
-		// console.log("rsvpEmail", rsvpEmail);
+		// send the form fields to routes/form.js, which updates json
 		$.post("/updateForm", { formFields: formFields }, postCallback);
 	});
 
-	// formFields = $("#form").serializeArray();
 	console.log("updated form values!!!", formFields);
+	// navigate to preview page
 	const newPath = "/preview/" + templateId;
 	window.location.href = newPath;
 }
