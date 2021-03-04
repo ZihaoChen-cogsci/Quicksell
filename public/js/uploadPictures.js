@@ -16,7 +16,7 @@ function imagesPreview(input, placeToInsertImagePreview) {
     if (input.files) {
         var filesAmount = input.files.length;
         console.log("the number of files is " + filesAmount);
-        
+        // console.log('picture url is: ', event.target.result);
             for (i = 0; i < filesAmount; i++) {
                 /*FileReaderWeb application object allows asynchronous read files 
                 stored on the user's computer (or raw data buffer) of the content.
@@ -35,4 +35,8 @@ function imagesPreview(input, placeToInsertImagePreview) {
 
     }
 };
+
+function readURL(x){
+    console.log(x.value());
+}
 

@@ -79,7 +79,7 @@
 				style="display:none;">
 			<label for="file" class="button" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
-			<div class="gallery"></div>
+			<div class="gallery" name="images"></div>
 			
 			<!--Product Information-->
 			<div class="divider">
@@ -106,7 +106,7 @@
 
 			<!-- description -->
 			<textarea rows="8" class="input-field"
-				placeholder="Please enter additional information if needed."></textarea>
+				placeholder="Please enter additional information if needed." name="description" value='{{formFields.[7].value}}'></textarea>
 
 			<!--Contact Information-->
 			<br />
@@ -119,7 +119,7 @@
 			<div class="contact-container">
 				<div class="input-field" style="width: 39%; margin: 0;">
 					<label for="contact-methods" class="input-label" style="font-size: 12px;">Contact Method</label>
-					<select class="input" id="contact-methods" name="contact-methods" value='{{formFields.[7].value}}'
+					<select class="input" id="contact-methods" name="contact-methods" value='{{formFields.[8].value}}'
 						style="font-size: 14px;">
 						<option value="phone">Cell Phone</option>
 						<option value="email">Email</option>
@@ -128,7 +128,7 @@
 					</select>
 				</div>
 				<div class="input-field" style="width: 60%; margin: 0;">
-					<input class="input" type="text" id="contact" name="contact" value='{{formFields.[8].value}}'>
+					<input class="input" type="text" id="contact" name="contact" value='{{formFields.[9].value}}'>
 				</div>
 			</div>
 

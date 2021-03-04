@@ -9,6 +9,10 @@ $(document).ready(function() {
 })
 
 function initializePage() {
+	/*.serializeArray(): creates a JS array of objects, ready to
+	be encoded as a JSON string. It operates on a jQuery collection
+	of forms or form control.
+	*/
 	formFields = $("#form").serializeArray();
 	console.log('initial form values!!', formFields);
 	$("#add-field-button").click(onAddField);
@@ -50,7 +54,7 @@ function onPreview(templateId) {
 	});
 
 	console.log("updated form values!!!", formFields);
-	// navigate to preview page
+	// navigate(jump) to preview page
 	const newPath = "/preview/" + templateId;
 	window.location.href = newPath;
 }

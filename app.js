@@ -49,6 +49,7 @@ app.get('/share', share.view);
 app.get('/sharable', sharable.view);
 
 app.post('/updateForm', form.updateForm);
+
 // Example route
 // app.get('/users', user.list);
 

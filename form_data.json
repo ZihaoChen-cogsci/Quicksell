@@ -7,6 +7,7 @@
     { "name": "width", "value": "" },
     { "name": "height", "value": "" },
     { "name": "condition", "value": "" },
+    { "name": "description", "value": "" },
     { "name": "contact-methods", "value": "" },
     { "name": "contact", "value": "" }
   ]

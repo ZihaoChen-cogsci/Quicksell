@@ -54,24 +54,24 @@
         {{/each}}
       </div>
 
-      <!--Funiture Information-->
-        <h1 style="font-size: 20px;">Leather High-Back Chair</h1>
-        <h2 style="color: #745452;">$109.9</h2>
-        
+      <!--Funiture Information: Leather High-Back Chair-->
+        <h1 style="font-size: 20px;">{{formData.[0].value}}</h1>
+        <h2 style="color: #745452;">{{formData.[1].value}}</h2>
         <div class="dimensions">
-          <div>Length: &nbsp;&nbsp;22in</div>
-          <div>Width: &nbsp;&nbsp;31in</div>
-          <div>Height: &nbsp;&nbsp;46in</div>
+          <!--22in-->
+          <!--<input value="{{formData.[0].value}}"></input>-->
+          <div>Length: &nbsp;&nbsp;{{formData.[3].value}} {{formData.[2].value}}</div>
+          <div>Width: &nbsp;&nbsp;{{formData.[4].value}} {{formData.[2].value}}</div>
+          <div>Height: &nbsp;&nbsp;{{formData.[5].value}} {{formData.[2].value}}</div>
           <br />
-          <div>Condition: &nbsp;&nbsp;Good</div>
+          <div>Condition: &nbsp;&nbsp;{{formData.[6].value}}</div>
         </div>
-        <p class="info" id="description">Weight capacity tested to support 275 lbs. Meets and/or exceeds ANSI/BIFMA performance standards. Only used
-          for a month, almost no wear</p>
+        <p class="info" id="description">{{formData.[7].value}}</p>
 
       <!--Contact Information-->
       <div class="contact">
         <div style="color: #745452;">Contact</div>
-        <div style="font-size: 18px;">xding@ucsd.edu</div>
+        <div style="font-size: 18px;">{{formData.[8].value}}: {{formData.[9].value}}</div>
         <div style="color: #745452;">for more information</div>
       </div>
 
