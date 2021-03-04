@@ -5,6 +5,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quicksell_login</title>
 	<link href="css/login.css" rel="stylesheet">
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '2819909474923240',
+	      cookie     : true,
+	      xfbml      : true,
+	      version    : 'v10.0'
+	    });
+
+	    FB.AppEvents.logPageView();
+
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
 </head>
 <body>
   <form action="/index">
@@ -23,11 +44,12 @@
       </label>
 			<span class="psw";>Forgot <a href="#">password?</a></span>
 		</div>
+		<fb:login-button class="fblogin" scope="public_profile,email" onlogin="window.location='/index'">
+		login with facebook
+</fb:login-button>
 		<div class="btn">
 		  <button type="submit">Login</button>
     </div>
-
-
   </form>
 </body>
 </html>
