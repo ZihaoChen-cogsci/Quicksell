@@ -18,13 +18,20 @@ exports.view = function(req, res){
 
 exports.updateForm = function(request, response) {
   var formFields = request.body.formFields;
-
   // update json with new form fields
   form_data["form_items"] = formFields.originalFields;
   form_data["new_form_items"] = formFields.newFields;
   // form_data["new_form_items_HTML"] = formFields.newFieldsHTML;
   console.log("form data!!!", form_data);
   response.send(formFields);
+}
+
+exports.updateImage = function(request, response){
+  // console.log(request.body.imageField);
+  var imageFields = request.body.imageField;
+  // console.log('passed images here: ');
+  // console.log(imageFields);
+  response.send(imageFields);
 }
 
 // exports.submitForm = function(request, response) {
