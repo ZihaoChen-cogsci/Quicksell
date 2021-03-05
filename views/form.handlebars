@@ -36,12 +36,14 @@
 			</div>
 			<div class="input-field">
 				<label for="name" class="input-label">Product Name</label>
-				<input class="input" type="text" id="name" name="name" value='{{formFields.[0].value}}' placeholder="e.g. Chair">
+				<input class="input" type="text" id="name" name="name" value='{{formFields.[0].value}}'
+					placeholder="e.g. Chair">
 			</div>
 			<div class="input-field">
 				<label for="price" class="input-label">Price</label>
 				<!--placeholder="eg. $20"-->
-				<input class="input" type="text" id="price" name="price" value='{{formFields.[1].value}}' placeholder="e.g. $50">
+				<input class="input" type="text" id="price" name="price" value='{{formFields.[1].value}}'
+					placeholder="e.g. $50">
 			</div>
 
 			<div class="divider">
@@ -80,7 +82,7 @@
 			<label for="file" class="button" id="picture" onclick="UploadPicture()">Upload Picture</label>
 			<div class="hint">Select up to <b>5 photos</b> from multiple angles to better present your product.</div>
 			<div class="gallery" name="images"></div>
-			
+
 			<!--Product Information-->
 			<div class="divider">
 				<div class="line"></div>
@@ -102,17 +104,19 @@
 			<!-- add new fields -->
 			<div id="new-fields">
 				{{#each newFields}}
-					<div id="newfield-{{name}}" class="new-field-container">
-						<div class="input-field" style="width: 38%;">
-							<label for="new-field-input">
-								<input id="new-field-label" class="input" type="text" name="new-field-label" placeholder="label (eg. color)" value="{{name}}">
+				<div id="newfield-{{name}}" class="new-field-container">
+					<div class="input-field" style="width: 38%;">
+						<label for="new-field-input">
+							<input id="new-field-label" class="input" type="text" name="new-field-label"
+								placeholder="label (eg. color)" value="{{name}}">
 							<label>
-						</div>
-						<div class="input-field" style="width: 52%;">
-							<input id="new-field-input" class="input" type="text" name="new-field-input" placeholder="value (eg. brown)" value="{{value}}">
-						</div>
-						<div style="width: 8%;" onclick="deleteFieldNoArg('#newfield-{{name}}')">x</div>
 					</div>
+					<div class="input-field" style="width: 52%;">
+						<input id="new-field-input" class="input" type="text" name="new-field-input"
+							placeholder="value (eg. brown)" value="{{value}}">
+					</div>
+					<div style="width: 8%;" onclick="deleteFieldNoArg('#newfield-{{name}}')">x</div>
+				</div>
 				{{/each}}
 			</div>
 			<button id="add-field-button" type="button"> + ADD NEW FIELD</button>
@@ -120,8 +124,8 @@
 			<div class="dashed-divider"></div>
 
 			<!-- description -->
-			<textarea rows="8" class="input-field"
-				placeholder="Please enter additional information if needed." name="description" value='{{formFields.[7].value}}'></textarea>
+			<textarea rows="8" class="input-field" placeholder="Please enter additional information if needed."
+				name="description" value='{{formFields.[7].value}}'></textarea>
 
 			<!--Contact Information-->
 			<br />
@@ -143,20 +147,22 @@
 					</select>
 				</div>
 				<div class="input-field" style="width: 60%; margin: 0;">
-					<input class="input" type="text" id="contact" name="contact" value='{{formFields.[9].value}}' placeholder="e.g. (555) 555 - 5555">
+					<input class="input" type="text" id="contact" name="contact" value='{{formFields.[9].value}}'
+						placeholder="e.g. (555) 555 - 5555">
 				</div>
 			</div>
 
-					<!-- Bottom Buttons-->
+			<!-- Bottom Buttons-->
 			<div class="btn-container">
-					<button class="button bottom_btn" id="save" type="submit" value="Save for later"
-						onclick="alert('Saved Successfully')">Save for later</button>
-					<button class="button bottom_btn" id="preview" type="submit" value="Preview"
-										onclick="onPreview('{{templateId}}')">Preview</button>
-						{{!-- onclick="onPreview('{{templateId}}')">Preview</button> --}}
+				<button class="button bottom_btn" id="save" type="submit" value="Save for later"
+					onclick="alert('Saved Successfully')">Save for later</button>
+				<button class="button bottom_btn" id="preview" type="submit" value="Preview"
+					onclick="onPreview('{{templateId}}')">Preview</button>
+				{{!-- onclick="onPreview('{{templateId}}')">Preview</button> --}}
 			</div>
 		</form>
 	</main>
+
 </body>
 
 </html>
