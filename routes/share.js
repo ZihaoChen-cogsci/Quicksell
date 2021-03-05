@@ -1,3 +1,5 @@
 exports.view = function(req, res){
-  res.render('share');
+  const templateId = req.params.id;
+
+  res.render('share', { templateId: templateId });
 };

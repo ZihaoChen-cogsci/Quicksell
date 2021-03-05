@@ -45,10 +45,11 @@ app.get('/index', index.view);
 app.get('/form/:id', form.view);
 app.get('/preview/:id', preview.view);
 app.get('/library',library.view);
-app.get('/share', share.view);
+app.get('/share/:id', share.view);
 app.get('/sharable', sharable.view);
 
 app.post('/updateForm', form.updateForm);
+app.post('/generateImage', preview.generateImage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

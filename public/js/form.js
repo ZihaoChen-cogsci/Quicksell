@@ -27,15 +27,6 @@ function initializePage() {
 function onAddField() {
 	const newFieldHTML = '<div id="new-field' + i + '" class="new-field-container"><div class="input-field" style="width: 38%;"><label for="new-field-input"><input id="new-field-label" class="input" type="text" name="new-field-label" placeholder="label (eg. color)"><label></div><div class="input-field" style="width: 52%;"><input id="new-field-input" class="input" type="text" name="new-field-input" placeholder="value (eg. brown)"></div><div style="width: 8%;" onclick="deleteField(' + i + ')">x</div></div>';
 	$("#new-fields").append(newFieldHTML);
-	
-	// const id = "#remove-button" + i;
-	
-	// HTMLmap.set(i, newFieldHTML);
-
-	// $(id).on("click", function() {
-	// 	console.log("remove element");
-	// 	$(this).parent().remove();
-	// })
 
 	i++;
 }
@@ -54,17 +45,9 @@ function deleteField(deleteId) {
 	console.log("id", id);
 	
 	$(id).remove();
-
-	// HTMLmap.remove(deleteId);
-	// $(this).parent().remove();
-
-
-	// remove this field from newFields
-	// formFields.newFields.splice(deleteId);
 }
 
 function deleteFieldNoArg(deleteId) {
-	// const deleteId = e.target.getAttribute('deleteId');
 	console.log('deleteId', deleteId);
 	$(deleteId).remove();
 }
@@ -108,7 +91,6 @@ function onPreview(templateId) {
 
 	// convert map to array
 	formFields.newFields = Array.from(map, ([name, value]) => ({ name, value }));
-	// formFields.newFieldsHTML = Array.from(HTMLmap, ([id, html] ))
 	
 	// send the form fields to routes/form.js, which updates json
 	$.post("/updateForm", { formFields: formFields }, postCallback);

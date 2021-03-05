@@ -17,8 +17,10 @@
   <script src="https://kit.fontawesome.com/0b253fb25d.js" crossorigin="anonymous"></script>
 
   <script src="/js/jquery-1.11.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   <script src="/js/library.js"></script>
   <script src="/js/preview.js"></script>
+  <script src="/js/share.js"></script>
 
   <script src="/js/bootstrap.js"></script>
   <link href="/css/bootstrap.css" rel="stylesheet">
@@ -33,13 +35,13 @@
       Back to edit
     </div>
     <div><b>Preview</b></div>
-    <div class="header-content header-right" style="font-size: 13px;" onclick="location.href='/share'">
+    <div class="header-content header-right" style="font-size: 13px;" onclick="onSave('{{templateId}}')">
       Save & Share
       <button class="back-button" style="transform: rotate(180deg);"></button>
     </div>
   </div>
 
-  <main class="preview-content">
+  <main class="preview-content" id="preview-content">
     <div style="background-color: white;">
       <!--Funiture pictures-->
       <div class="img-container">
