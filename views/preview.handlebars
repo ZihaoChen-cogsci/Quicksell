@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quicksell</title>
   <link href="/css/preview.css" rel="stylesheet">
+  <link href="/css/form.css" rel="stylesheet">
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -40,7 +42,7 @@
   </div>
 
   <main class="preview-content">
-    <div style="background-color: white;">
+    <div style="background-color: white;" id="content">
       <!--Funiture pictures-->
       <div class="img-container">
         <a class="prev" onclick="addnum(-1)">&#10094;</a>
@@ -55,32 +57,145 @@
       </div>
 
       <!--Funiture Information: Leather High-Back Chair-->
-        <h1 style="font-size: 20px;">{{formData.[0].value}}</h1>
+        <h1>{{formData.[0].value}}</h1>
         <h2 style="color: #745452;">{{formData.[1].value}}</h2>
         <div class="dimensions">
           <!--22in-->
           <!--<input value="{{formData.[0].value}}"></input>-->
-          <div>Length: &nbsp;&nbsp;{{formData.[3].value}} {{formData.[2].value}}</div>
-          <div>Width: &nbsp;&nbsp;{{formData.[4].value}} {{formData.[2].value}}</div>
-          <div>Height: &nbsp;&nbsp;{{formData.[5].value}} {{formData.[2].value}}</div>
+        
+          <div id="length">Length: &nbsp;&nbsp;{{formData.[3].value}} {{formData.[2].value}}</div>
+          <div id="width">Width: &nbsp;&nbsp;{{formData.[4].value}} {{formData.[2].value}}</div>
+          <div id="height">Height: &nbsp;&nbsp;{{formData.[5].value}} {{formData.[2].value}}</div>
           <br />
-          <div>Condition: &nbsp;&nbsp;{{formData.[6].value}}</div>
+          <div id="condition">Condition: &nbsp;&nbsp;{{formData.[6].value}}</div>
         </div>
         <p class="info" id="description">{{formData.[7].value}}</p>
 
-      <!--Contact Information-->
+    </div>
+
+    <!--Contact Information-->
       <div class="contact">
         <div style="color: #745452;">Contact</div>
-        <div style="font-size: 18px;">{{formData.[8].value}}: {{formData.[9].value}}</div>
+        <div style="font-size: 18px;" id="contact">{{formData.[8].value}}: {{formData.[9].value}}</div>
         <div style="color: #745452;">for more information</div>
       </div>
 
-    </div>
   </main>
 
   <script>
     var picnum = 1;
     picshw(picnum);
+
+ 
+    console.log('length is:', {{ formData.[0].value.length }});
+          //console.log({{formData.length}});
+          //for(let i = 0; i < {{formData.length}}; i++){
+
+    //1. first case:
+    if ({{ formData.[0].value.length }} == 0) {
+      $('h1').html(''); 
+    }
+
+    //2. second case:
+    if ({{ formData.[1].value.length }} == 0) {
+      $('h2').hide(); 
+    }else{
+      if ({{ formData.[0].value.length }} == 0) 
+      $('h1').hide(); 
+    
+    }
+
+    //3. third case:
+    if ({{ formData.[3].value.length }} == 0) {
+      $('#length').html('');
+    }else{
+      if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+    }
+
+    //4. fourth case:
+    if ({{ formData.[4].value.length }} == 0) {
+      $('#width').html('');
+    }else{
+       if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+       if({{ formData.[3].value.length }} == 0)
+        $('#length').hide(); 
+    }
+
+    //5. fifth case:
+    if ({{ formData.[5].value.length }} == 0) {
+      $('#height').html('');
+    }else{
+       if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+       if({{ formData.[3].value.length }} == 0)
+        $('#length').hide(); 
+      if({{ formData.[4].value.length }} == 0)
+        $('#width').hide(); 
+    }
+
+
+    //6. sixth case:
+    if ({{ formData.[6].value.length }} == 0) {
+      $('#condition').hide(); 
+    }else{
+       if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+       if({{ formData.[3].value.length }} == 0)
+        $('#length').hide(); 
+      if({{ formData.[4].value.length }} == 0)
+        $('#width').hide(); 
+      if({{ formData.[5].value.length }} == 0)
+        $('#height').hide(); 
+    }
+
+
+//7. seventh case:
+     if ({{ formData.[7].value.length }} == 0) {
+      $('#description').html(''); 
+    }else{
+       if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+       if({{ formData.[3].value.length }} == 0)
+        $('#length').hide(); 
+      if({{ formData.[4].value.length }} == 0)
+        $('#width').hide(); 
+      if({{ formData.[5].value.length }} == 0)
+        $('#height').hide(); 
+      if({{ formData.[6].value.length }} == 0)
+        $('#condition').hide(); 
+    }
+
+//8. eigth case:
+     if ({{ formData.[9].value.length }} == 0) {
+      $('#contact').hide(); 
+    }else{
+       if({{ formData.[0].value.length }} == 0)
+        $('h1').hide(); 
+      if({{ formData.[1].value.length }} == 0)
+        $('h2').hide(); 
+       if({{ formData.[3].value.length }} == 0)
+        $('#length').hide(); 
+      if({{ formData.[4].value.length }} == 0)
+        $('#width').hide(); 
+      if({{ formData.[5].value.length }} == 0)
+        $('#height').hide(); 
+      if({{ formData.[6].value.length }} == 0)
+        $('#condition').hide(); 
+      if({{ formData.[7].value.length }} == 0)
+        $('#description').hide(); 
+    }
   </script>
 </body>
 
