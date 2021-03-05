@@ -1,7 +1,13 @@
 // 'use strict';
 
 let i = 0;
-var formFields = [];
+var formFields = {
+	originalFields: [],
+	newFields: [],
+};
+
+let map = new Map();
+let HTMLmap = new Map();
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -13,31 +19,54 @@ function initializePage() {
 	be encoded as a JSON string. It operates on a jQuery collection
 	of forms or form control.
 	*/
-	formFields = $("#form").serializeArray();
+	formFields.originalFields = $("#form").serializeArray();
 	console.log('initial form values!!', formFields);
-	$("#add-field-button").click(onAddField);
+	$("#add-field-button").on("click", onAddField);
 }
 
 function onAddField() {
-	const fieldName = $("#new-field-label").val();
-	const fieldInput = $("#new-field-input").val();
+	const newFieldHTML = '<div id="new-field' + i + '" class="new-field-container"><div class="input-field" style="width: 38%;"><label for="new-field-input"><input id="new-field-label" class="input" type="text" name="new-field-label" placeholder="label (eg. color)"><label></div><div class="input-field" style="width: 52%;"><input id="new-field-input" class="input" type="text" name="new-field-input" placeholder="value (eg. brown)"></div><div style="width: 8%;" onclick="deleteField(' + i + ')">x</div></div>';
+	$("#new-fields").append(newFieldHTML);
+	
+	// const id = "#remove-button" + i;
+	
+	// HTMLmap.set(i, newFieldHTML);
 
-	$("#new-fields").append('<div id="new-field' + i + '" class="new-field-container"><div class="input-field" style="width: 38%;"><input id="new-field-label" class="input" type="text" name="new-field-label" placeholder="label (eg. color)"></div><div class="input-field" style="width: 52%;"><input id="new-field-input" class="input" type="text" name="new-field-input" placeholder="value (eg. brown)"></div><div style="width: 8%;" onclick="deleteField(' + i + ')">x</div></div>');
+	// $(id).on("click", function() {
+	// 	console.log("remove element");
+	// 	$(this).parent().remove();
+	// })
 
 	i++;
+}
 
-	console.log({fieldName, fieldInput});
+function restoreAddedFields(name, value) {
+	console.log("name value", name, value);
+	const field = '<div id="new-field' + i + '" class="new-field-container"><div class="input-field" style="width: 38%;"><label for="new-field-input"><input id="new-field-label" class="input" type="text" name="new-field-label" placeholder="label (eg. color)" value="' + name + '"><label></div><div class="input-field" style="width: 52%;"><input id="new-field-input" class="input" type="text" name="new-field-input" placeholder="value (eg. brown)" value="' + value + '"></div><div style="width: 8%;" onclick="deleteField(' + i + ')">x</div></div>';
+	// $("#new-fields").append(field);
+	i++;
 
-	formFields = $("#form").serializeArray();
+	return field;
 }
 
 function deleteField(deleteId) {
-	console.log(deleteId);
 	const id = "#new-field" + deleteId;
+	console.log("id", id);
 	
 	$(id).remove();
 
-	formFields = $("#form").serializeArray();
+	// HTMLmap.remove(deleteId);
+	// $(this).parent().remove();
+
+
+	// remove this field from newFields
+	// formFields.newFields.splice(deleteId);
+}
+
+function deleteFieldNoArg(deleteId) {
+	// const deleteId = e.target.getAttribute('deleteId');
+	console.log('deleteId', deleteId);
+	$(deleteId).remove();
 }
 
 // when users submit
@@ -46,17 +75,61 @@ function onPreview(templateId) {
 
 	$("#form").submit(function(e) {
 		e.preventDefault();
-		console.log("submitting");
-		// get the new form fields
-		formFields = $("#form").serializeArray();
-		// send the form fields to routes/form.js, which updates json
-		$.post("/updateForm", { formFields: formFields }, postCallback);
 	});
 
-	console.log("updated form values!!!", formFields);
+	if(!checkIfComplete()) {
+		if(!confirm("There are some empty fields in the form, do you still want to proceed?")) {
+			return;
+		}
+	}
+
+	var newField = {
+		name: '',
+		value: '',
+	};
+
+	console.log("form values___", $("#form").serializeArray());
+
+	// get the new form fields and separate out the custom fields
+	formFields.originalFields = $("#form").serializeArray().filter((field) => {
+		if(!(field.name == 'new-field-label' || field.name == 'new-field-input')) {
+			return true;
+		}
+		if(field.name == 'new-field-label') {
+			newField = {};
+			newField.name = field.value;
+		}
+		if(field.name == 'new-field-input') {
+			newField.value = field.value;
+			map.set(newField.name, newField.value);
+		}
+		return false;
+	});
+
+	// convert map to array
+	formFields.newFields = Array.from(map, ([name, value]) => ({ name, value }));
+	// formFields.newFieldsHTML = Array.from(HTMLmap, ([id, html] ))
+	
+	// send the form fields to routes/form.js, which updates json
+	$.post("/updateForm", { formFields: formFields }, postCallback);
+
 	// navigate(jump) to preview page
 	const newPath = "/preview/" + templateId;
 	window.location.href = newPath;
+}
+
+function checkIfComplete() {
+	const formFields = $("#form").serializeArray();
+	for(var i = 0; i < formFields.length; i++) {
+		const field = formFields[i];
+		if(!field.value || field.value == '' || field.value.length == 0) {
+			console.log('field is empty return false');
+			return false;
+		}
+	}
+	console.log('return true');
+
+	return true;
 }
 
 function postCallback(res) {
