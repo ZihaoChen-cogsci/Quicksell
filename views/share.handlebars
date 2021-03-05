@@ -20,7 +20,7 @@
   <script src="/js/share.js"></script>
 </head>
 <body>
-  {{!-- <div class="header">
+  <div class="header">
     <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='/preview/{{templateId}}'">
       <button class="back-button"></button>
       Back
@@ -29,18 +29,11 @@
   </div>
   <div class="saved-content-container">
       <img src="../images/description-img.png" alt="description placeholder" class="description-img">
-  </div> --}}
+  </div>
 
-  <div id="content">
-            <h3>Hello, this is a H3 tag</h3>
-            <p>a pararaph</p>
-        </div>
-        <div id="editor"></div>
-        <button id="cmd">generate PDF and Image</button>
-
-  {{!-- <div>Product Description Created!</div>
+  <div>Product Description Created!</div>
   <div>Sharable Link Generated!</div>
-  <a>https://a6-quicksell.herokuapp.com/sharable</a>
+  <a>https://a6-quicksell.herokuapp.com/preview/template1</a>
 
   <div class="divider">
     <div class="line"></div>
@@ -63,6 +56,6 @@
     </a>
   </div>
 
-  <button class="button" id="build-description" type="submit" onclick="location.href='/index?remember=on'">Build Another Description</button> --}}
+  <button class="button" id="build-description" type="submit" onclick="location.href='/index?remember=on'">Build Another Description</button>
 </body>
 </html>

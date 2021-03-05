@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $('#cmd').click(function () {
-    // pdf();
-       capture();
-   });         
+    pdf();
+      //  capture();
+  });         
 });
 
 function pdf()

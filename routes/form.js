@@ -18,6 +18,7 @@ exports.view = function(req, res){
 
 exports.updateForm = function(request, response) {
   var formFields = request.body.formFields;
+
   // update json with new form fields
   form_data["form_items"] = formFields.originalFields;
   form_data["new_form_items"] = formFields.newFields;

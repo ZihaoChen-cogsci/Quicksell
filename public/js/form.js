@@ -7,7 +7,6 @@ var formFields = {
 };
 
 let map = new Map();
-let HTMLmap = new Map();
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -71,8 +70,6 @@ function onPreview(templateId) {
 		value: '',
 	};
 
-	console.log("form values___", $("#form").serializeArray());
-
 	// get the new form fields and separate out the custom fields
 	formFields.originalFields = $("#form").serializeArray().filter((field) => {
 		if(!(field.name == 'new-field-label' || field.name == 'new-field-input')) {
@@ -90,6 +87,7 @@ function onPreview(templateId) {
 	});
 
 	// convert map to array
+
 	formFields.newFields = Array.from(map, ([name, value]) => ({ name, value }));
 	
 	// send the form fields to routes/form.js, which updates json

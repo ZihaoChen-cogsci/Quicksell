@@ -95,9 +95,13 @@
   display: inline-flex;
 }
 
+#content{
+  height: 600px;
+}
+
 .preview-content {
   width: 100%;
-  height: fit-content;
+  /* height: 680px; */
   padding: 14px;
   background-color: #F1F1F1;
 }
@@ -112,17 +116,16 @@
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  /* line-height: 23px; */
   text-align: center;
-  color: #000;
+  /* color: #000; */
 }
 
 h2 {
-  color: #dd3e2f;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 30px;
@@ -147,30 +150,40 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 30px;
+  height: 100px;
+  margin-bottom: 0px;
+  vertical-align: middle;
 }
 
 .info {
   color: #686868;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
   margin-top: 20px;
+  height: fit-content;
+  width: 100px;
 }
 
 #description {
   width: 80%;
   margin: 20px auto;
   text-align: start;
+  word-wrap: break-word;
+  font-weight: normal;
+  padding-bottom: 2em;
 }
 
 .contact{
   width: 100%;
   background-color: rgba(133, 81, 78, 0.3);
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  height: fit-content;
+  margin-bottom: 10px;
+  /* margin-top: 200px; */
 }
 
 /*New added, same with library, needs to change later!*/
