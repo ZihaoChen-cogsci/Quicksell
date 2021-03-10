@@ -86,6 +86,8 @@ function onPreview(templateId) {
 		return false;
 	});
 
+	console.log("fileds", $("#form").serializeArray());
+
 	// convert map to array
 
 	formFields.newFields = Array.from(map, ([name, value]) => ({ name, value }));
