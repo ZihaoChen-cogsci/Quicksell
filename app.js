@@ -18,6 +18,7 @@ var login = require('./routes/login');
 var library = require('./routes/library');
 var share = require('./routes/share');
 var sharable = require('./routes/sharable');
+var history = require('./routes/history');
 var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -47,10 +48,13 @@ app.get('/preview/:id', preview.view);
 app.get('/library',library.view);
 app.get('/share/:id', share.view);
 app.get('/sharable', sharable.view);
+app.get('/history', history.view);
 
 app.post('/updateForm', form.updateForm);
 // app.post('/generateImage', preview.generateImage);
 app.post('/updateImage', form.updateImage);
+app.post('/saveForm', form.saveForm);
+app.post('/restoreForm', history.restoreForm);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

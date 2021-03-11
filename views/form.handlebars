@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link href="/css/form.css" rel="stylesheet">
+	<link href="/css/header.css" rel="stylesheet">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 	</style>
@@ -154,8 +155,7 @@
 
 			<!-- Bottom Buttons-->
 			<div class="btn-container">
-					<button class="button bottom_btn" id="save" type="submit" value="Save for later"
-						onclick="alert('Saved Successfully')">Save for later</button>
+					<button class="button bottom_btn" id="save" type="submit" value="Save for later" onclick="saveForLater('{{saveInd}}')">Save for later</button>
 					<button class="button bottom_btn" id="preview" type="submit" value="Preview"
 										onclick="onPreview('{{templateId}}')">Preview</button>
 			</div>

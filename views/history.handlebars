@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quicksell_homescreen</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="/js/history.js"></script>
+  <link href="/css/header.css" rel="stylesheet">
+  <link href="/css/history.css" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+    <div class="header-content header-left" style="font-size: 13px;" onclick="location.href='/index'">
+      <button class="back-button"></button>
+      Back
+    </div>
+    <div><b>Saved Forms</b></div>
+  </div>
+
+  {{#if savedForms.length}}
+    {{#each savedForms}}
+      <div class="history-card" onclick="onSelectForm('{{@index}}')">
+        <div><b><i>object name:</i> {{originalFields.[0].value}}</b></div>
+        <div><i>price:</i> {{originalFields.[1].value}}</b></div>
+        <div><i>saved at time:</i> {{timestamp}}</div>
+        <div><i>template:</i> {{template}}</div>
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="empty-history">
+      No Saved Forms.
+    </div>
+  {{/if}}
+
+</body>
+</html>

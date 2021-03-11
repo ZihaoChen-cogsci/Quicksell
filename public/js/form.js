@@ -1,6 +1,7 @@
 // 'use strict';
 
 let i = 0;
+
 var formFields = {
 	originalFields: [],
 	newFields: [],
@@ -21,6 +22,7 @@ function initializePage() {
 	formFields.originalFields = $("#form").serializeArray();
 	console.log('initial form values!!', formFields);
 	$("#add-field-button").on("click", onAddField);
+	// $("#save").on("click", saveForLater);
 }
 
 function onAddField() {
@@ -51,20 +53,7 @@ function deleteFieldNoArg(deleteId) {
 	$(deleteId).remove();
 }
 
-// when users submit
-function onPreview(templateId) {
-	console.log("templateId", templateId);
-
-	$("#form").submit(function(e) {
-		e.preventDefault();
-	});
-
-	if(!checkIfComplete()) {
-		if(!confirm("There are some empty fields in the form, do you still want to proceed?")) {
-			return;
-		}
-	}
-
+function onSubmit() {
 	var newField = {
 		name: '',
 		value: '',
@@ -91,6 +80,23 @@ function onPreview(templateId) {
 	// convert map to array
 
 	formFields.newFields = Array.from(map, ([name, value]) => ({ name, value }));
+}
+
+// when users submit
+function onPreview(templateId) {
+	console.log("templateId", templateId);
+
+	$("#form").submit(function(e) {
+		e.preventDefault();
+	});
+
+	if(!checkIfComplete()) {
+		if(!confirm("There are some empty fields in the form, do you still want to proceed?")) {
+			return;
+		}
+	}
+
+	onSubmit();
 	
 	// send the form fields to routes/form.js, which updates json
 	$.post("/updateForm", { formFields: formFields }, postCallback);
@@ -116,4 +122,19 @@ function checkIfComplete() {
 
 function postCallback(res) {
 	alert("product information received!");
+}
+
+function saveForLater(saveInd) {
+	$("#form").submit(function(e) {
+		e.preventDefault();
+	});
+
+	onSubmit();
+
+	$.post("/saveForm", { formFields, saveInd }, function() {
+		console.log('form fields', formFields);
+		alert("saved successfully!");
+	});
+
+	window.location.href = "/index";
 }
