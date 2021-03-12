@@ -71,6 +71,9 @@
           <div id="height">Height: &nbsp;&nbsp;{{formData.[5].value}} {{formData.[2].value}}</div>
           <br />
           <div id="condition">Condition: &nbsp;&nbsp;{{formData.[6].value}}</div>
+          {{#each newFormData}}
+            <div>{{name}} : {{value}}</div>
+          {{/each}}
         </div>
         <p class="info" id="description">{{formData.[7].value}}</p>
 

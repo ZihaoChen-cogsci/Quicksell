@@ -10,7 +10,7 @@ exports.view = function(req, res){
   console.log("form data", form_data);
 
   // pass template id and form fields to preview page
-  res.render('preview', { templateId: templateId, templates: data.templates, formData: form_data["form_items"] });
+  res.render('preview', { templateId: templateId, templates: data.templates, formData: form_data["form_items"], newFormData: form_data["new_form_items"] });
 };
 
 // exports.generateImage = function(req, res) {

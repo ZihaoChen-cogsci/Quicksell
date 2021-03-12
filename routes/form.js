@@ -45,9 +45,7 @@ exports.saveForm = function(request, response) {
 
   // if has saved index, then this form has been saved before, replace the old data
   if (saveInd) {
-    console.log("before!!!!!", saved_forms["saved_forms"]);
     saved_forms["saved_forms"] = saved_forms["saved_forms"].filter((form) => form["save_ind"] !== saveInd);
-    console.log("after!!!!!", saved_forms["saved_forms"]);
     formFields['saveInd'] = saveInd; // use the same save index as before
   }
 
