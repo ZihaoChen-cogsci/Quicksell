@@ -55,11 +55,14 @@
 			<!--dimensions-->
 			<div class="input-field">
 				<label for="dimension" class="input-label">Dimension</label>
-				<select id="dimension" class="input" id="dimension" name="dimension" value='{{formFields.[2].value}}'>
-					<option value="cm">centimenter (CM)</option>
-					<option value="m">meter (M)</option>
-					<option value="inch">inch (IN)</option>
-					<option value="foot">foot (FT)</option>
+				<select id="dimension" class="input" name="dimension" value='{{formFields.[2].value}}'>
+					{{#each dimensions}}
+						{{#if selected}}
+							<option value="{{value}}" selected="true">{{text}}</option>
+						{{else}}
+							<option value="{{value}}">{{text}}</option>
+						{{/if}}
+					{{/each}}
 				</select>
 			</div>
 			<div class="input-field">
@@ -92,13 +95,14 @@
 			</div>
 			<div class="input-field">
 				<label for="condition" class="input-label">Condition</label>
-				<select class="input" id="condition" name="condition" value='{{formFields.[6].value}}'>
-					<option value=""></option>
-					<option value="new">New</option>
-					<option value="like new">Like New</option>
-					<option value="good">Good</option>
-					<option value="fair">Fair</option>
-					<option value="poor">Poor</option>
+				<select class="input" id="condition" name="condition">
+					{{#each conditions}}
+						{{#if selected}}
+							<option value="{{value}}" selected="true">{{text}}</option>
+						{{else}}
+							<option value="{{value}}">{{text}}</option>
+						{{/if}}
+					{{/each}}
 				</select>
 			</div>
 

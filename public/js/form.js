@@ -7,6 +7,8 @@ var formFields = {
 	newFields: [],
 };
 
+var dimension, condition;
+
 let map = new Map();
 
 // Call this function when the page loads (the "ready" event)
@@ -64,13 +66,23 @@ function onSubmit() {
 		if(!(field.name == 'new-field-label' || field.name == 'new-field-input')) {
 			return true;
 		}
+
 		if(field.name == 'new-field-label') {
 			newField = {};
 			newField.name = field.value;
 		}
+
 		if(field.name == 'new-field-input') {
 			newField.value = field.value;
 			map.set(newField.name, newField.value);
+		}
+
+		if(field.name == 'dimension') {
+			dimension = field.value;
+		}
+
+		if(field.name == 'condition') {
+			condition = field.value;
 		}
 		return false;
 	});
@@ -131,7 +143,7 @@ function saveForLater(saveInd) {
 
 	onSubmit();
 
-	$.post("/saveForm", { formFields, saveInd }, function() {
+	$.post("/saveForm", { formFields, saveInd, dimension, condition }, function() {
 		console.log('form fields', formFields);
 		alert("saved successfully!");
 	});
