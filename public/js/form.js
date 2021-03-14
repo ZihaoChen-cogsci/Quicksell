@@ -143,7 +143,7 @@ function saveForLater(saveInd) {
 
 	onSubmit();
 
-	$.post("/saveForm", { formFields, saveInd, dimension, condition }, function() {
+	$.post("/saveForm", { formFields, saveInd }, function() {
 		console.log('form fields', formFields);
 		alert("saved successfully!");
 	});
